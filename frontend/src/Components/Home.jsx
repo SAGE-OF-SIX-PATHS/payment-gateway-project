@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const Home = () => {
-          const ItemName = "ferrero rocher";
+          const ItemName = "Chakra";
           const ItemPrice = 800;
           const [quantity, setQuantity] = useState(1)
           const [finalAmount, setFinalAmount] = useState(ItemPrice)
