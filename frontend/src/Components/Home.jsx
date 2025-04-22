@@ -23,7 +23,7 @@ const Home = () => {
           }
 
           const checkout = () => {
-                    fetch("http://localhost:5000/create-checkout-session", {
+                    fetch("https://payment-gateway-project.onrender.com/create-checkout-session", {
                               method: "POST",
                               headers: {
                                         "Content-Type": "application/json"
