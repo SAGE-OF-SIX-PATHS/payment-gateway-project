@@ -52,7 +52,7 @@ const Home = () => {
                     <div className="w-full mx-auto ">
                               <div className="text-center font-raleway w-full max-w-5xl mx-auto my-6">
                                         <div className="font-extrabold text-transparent text-6xl  my-10 bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-800">
-                                                  Chocolate Corner
+                                                  Chakra Tree
                                         </div>
                                         <div className="flex flex-col lg:flex-row justify-center items mx-auto w-full my-16 border-2 bg-[#fcf6f6] border-slate-100 shadow-md py-4 ">
                                                   <div className="flex lg:justify-end justify-center items-center mx-auto my-24 w-full lg:w-6/12">
@@ -65,7 +65,7 @@ const Home = () => {
                                                             <div className="text-3xl font-semibold my-6 text-slate-600">
                                                                       Price: &nbsp;&nbsp; {ItemPrice}
                                                             </div>
-                                                            <small className="mt-10 mb-3 font-semibold">Add Quantity</small>
+                                                            <small className="mt-10 mb-3 font-semibold">Add Chakra reserve Quantity</small>
                                                             <div className="flex text-slate-900 justify-center items-center mg-10">
                                                                       <span onClick={decrement} className="select-none w-auto px-4 py-2 text-5xl bg-red-100 cursor-pointer rounded">-</span>
                                                                       <span className="w-auto px-4 py-2 text-3xl font-semibold">{quantity}</span>
