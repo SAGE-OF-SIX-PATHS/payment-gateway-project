@@ -22,31 +22,33 @@ const Home = () => {
                     }
           }
 
-          const checkout = () => {
-                    fetch("https://payment-gateway-project.onrender.com/create-checkout-session", {
-                              method: "POST",
-                              headers: {
-                                        "Content-Type": "application/json"
-                              },
-                              mode: "cors",
-                              body: JSON.stringify({
-                                        items: [
-                                                  { name: ItemName, price: ItemPrice, quantity: quantity }
-                                        ]
-                              })
-                    })
-                              .then(res => {
-                                        if (res.ok) return res.json();
-                                        return res.json().then(json => Promise.reject(json));
-                              })
-                              .then(({ url }) => {
-                                        window.location.href = url;
-                              })
-                              .catch(e => {
-                                        console.log(e.error);
+          const checkout = async () => {
+                    try {
+                              const response = await fetch("https://payment-gateway-project.onrender.com/create-checkout-session", {
+                                        method: "POST",
+                                        headers: {
+                                                  "Content-Type": "application/json",
+                                        },
+                                        body: JSON.stringify({
+                                                  items: [{
+                                                            name: ItemName,
+                                                            price: ItemPrice,
+                                                            quantity: quantity
+                                                  }]
+                                        })
                               });
-          };
 
+                              if (!response.ok) {
+                                        throw new Error(`HTTP error! status: ${response.status}`);
+                              }
+
+                              const { url } = await response.json();
+                              window.location.href = url;
+                    } catch (error) {
+                              console.error("Checkout failed:", error);
+                              alert("Failed to initiate checkout. Please try again.");
+                    }
+          };
 
 
           return (
