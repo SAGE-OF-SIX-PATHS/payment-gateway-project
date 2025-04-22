@@ -31,21 +31,22 @@ const Home = () => {
                               mode: "cors",
                               body: JSON.stringify({
                                         items: [
-                                                  { id: 1, quantity: quantity, price: ItemPrice, name: ItemName }
+                                                  { name: ItemName, price: ItemPrice, quantity: quantity }
                                         ]
                               })
                     })
                               .then(res => {
-                                        if (res.ok) return res.json(); // ✅ fixed
-                                        return res.json().then(json => Promise.reject(json)); // ✅ fixed
+                                        if (res.ok) return res.json();
+                                        return res.json().then(json => Promise.reject(json));
                               })
                               .then(({ url }) => {
-                                        window.location.href = url; // ✅ fixed
+                                        window.location.href = url;
                               })
                               .catch(e => {
                                         console.log(e.error);
                               });
           };
+
 
 
           return (
